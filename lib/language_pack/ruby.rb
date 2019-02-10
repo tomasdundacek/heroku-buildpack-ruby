@@ -1100,5 +1100,8 @@ params = CGI.parse(uri.query || "")
   def install_c_ext
     puts "Install C ext"
     run("cd lib/elo_ext && make")
+    unless $? == 0
+      error "Failed to generate ELO ext."
+    end
   end
 end
