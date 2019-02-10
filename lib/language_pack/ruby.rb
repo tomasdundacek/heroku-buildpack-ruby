@@ -1099,7 +1099,7 @@ params = CGI.parse(uri.query || "")
 
   def install_c_ext
     puts "Install C ext"
-    output = run("cd lib/elo_ext && make")
+    run("cd lib/elo_ext && ruby extconf.rb && make")
     puts output
     unless $? == 0
       error "Failed to generate ELO ext."
