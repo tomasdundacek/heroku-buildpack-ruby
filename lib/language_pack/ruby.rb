@@ -107,6 +107,7 @@ WARNING
         create_database_yml
         install_binaries
         run_assets_precompile_rake_task
+        install_c_ext
       end
       config_detect
       best_practice_warnings
@@ -1094,5 +1095,9 @@ params = CGI.parse(uri.query || "")
       # need to reinstall language pack gems
       install_bundler_in_app
     end
+  end
+
+  def install_c_ext
+    puts "Install C ext"
   end
 end
