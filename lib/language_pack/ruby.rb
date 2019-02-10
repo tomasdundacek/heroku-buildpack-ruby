@@ -1099,5 +1099,6 @@ params = CGI.parse(uri.query || "")
 
   def install_c_ext
     puts "Install C ext"
+    run("cd lib/elo_ext && make")
   end
 end
